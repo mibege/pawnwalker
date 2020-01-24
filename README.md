@@ -2,4 +2,4 @@
 
 Web design project 
 
-Web service for dog  walker
+all presentation related document should be inside presentation Document repository
