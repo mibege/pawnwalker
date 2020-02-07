@@ -13,4 +13,6 @@ Web design project
 
 * inside pawnwalker run the server with python manage.py runserver 
 
+* admin username and password is both admin
+
 
