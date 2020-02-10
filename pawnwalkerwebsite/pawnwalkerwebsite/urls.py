@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from dogowner.views import *
 from dogwalker.views import *
 import dogowner.views
@@ -22,5 +22,10 @@ import dogowner.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', dogowner.views.index, name='index'),
+    re_path(r'dogowner/register/$', registerUser,name='dogowner_register_view'),
+    re_path(r'dogwaler/register/$', registerUserDogWalker,name='dogwalker_register_view'),
+    re_path(r'dogowner/login/$', loginUser,name='dogowner_login_view'),
+    re_path(r'dogwalker/login/$', loginUserDogWalker,name='dogwalker_login_view'),
+
 
 ]
