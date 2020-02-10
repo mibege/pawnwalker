@@ -9,7 +9,7 @@ Web design project
 
 * python 3 must be install from https://www.python.org/downloads/
  
-* django must be install with pip install django 
+* install the required library using pip install -r requirements.txt
 
 * inside pawnwalker run the server with python manage.py runserver 
 
