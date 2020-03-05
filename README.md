@@ -13,8 +13,8 @@ Web design project
  
 * install the required library using pip install -r requirements.txt
 
-* inside pawnwalker run the server with python manage.py runserver 
+* inside pawnwalker/source run the server with python manage.py runserver 
 
-* admin username and password is both admin
+* admin username and password is username is mgebre and password is admin
 
 
