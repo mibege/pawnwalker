@@ -1,13 +1,17 @@
 from django import forms
 
+from accounts.models import Event
 from userprofile.models import userProfile
 from django.utils.translation import gettext_lazy as _
+from bootstrap_datepicker_plus import DatePickerInput, TimePickerInput
+
+from userprofile.widget import BootstrapDateTimePickerInput
 
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = userProfile
-        fields = ['address', 'city', 'isDogwalker']
+        fields = ['name', 'address', 'city', 'isDogwalker']
 
     def save(self, commit=True):
         auction = super(UserProfileForm, self).save(commit=False)
@@ -16,7 +20,21 @@ class UserProfileForm(forms.ModelForm):
         return auction
 
 
-class UpdateUserProfileForm(forms.Form):
-    address = forms.CharField(label=_('Address'), max_length=30, required=False)
-    city = forms.CharField(label=_('City'), max_length=150, required=False)
-    isDogwalker = forms.BooleanField(label=_('Dog Walker'), required=False)
+class DateForm(forms.Form):
+    date = forms.DateTimeField(input_formats=['%d/%m/%Y %H:%M'])
+
+class DateForm(forms.Form):
+    date = forms.DateTimeField(
+        input_formats=['%d/%m/%Y %H:%M'],
+        widget=BootstrapDateTimePickerInput()
+    )
+
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ['name', 'start_date', 'end_date']
+        widgets = {
+            'start_date': DatePickerInput(),  # default date-format %m/%d/%Y will be used
+            'end_date': DatePickerInput(format='%Y-%m-%d'),  # specify date-frmat
+        }

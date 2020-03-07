@@ -6,7 +6,9 @@
 
     {% if request.user.is_authenticated %}
 
-        {% trans 'Your username is' %} <b>{{ request.user.username }}</b>.
+        {% trans 'Your username is' %} <b>{{ request.user.username }}</b>.<br />
+
+         {% trans 'Your email is' %} <b>{{ request.user.email }}</b>.
 
     {% else %}
 

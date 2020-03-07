@@ -1,65 +1,72 @@
-    {% include 'layouts/default/page.html' %}
-    <!DOCTYPE html>
-    {% load i18n %}
+{% include 'layouts/default/page.html' %}
+<!DOCTYPE html>
+{% load i18n %}
 
-    <html>
-      <head>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-        <meta charset="utf-8">
-        <title>Simple Markers</title>
-        <style>
-          /* Always set the map height explicitly to define the size of the div
-           * element that contains the map. */
-          #map {
-         position: absolute;
-      margin: auto;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 400px;
-      height: 400px;
-          }
-          /* Optional: Makes the sample page fill the window. */
-          html, body {
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Pawnwalker Map</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 800px;
+            height: 800px;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
             height: 50%;
             margin: 0;
             padding: 0;
-          }
-        </style>
-      </head>
-      <body>
+        }
+    </style>
+</head>
+<body>
 
 
-
-        <div id="map"></div>
-        <script type = 'text/javascript'>
-            var data = {{json|safe}}
-                var len = data.length
+<div id="map"></div>
+<script type='text/javascript'>
 
 
+    var center = {lat: 65.0121, lng: 25.4651};
 
-            var center = {lat: 61.4978, lng: 23.7610};
-          function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 6,
-              center: center
-            });
-       for(var i = 0 ; i < len ; i++){
-            var myLatLng = {lat: parseFloat(data[i]["fields"].lat), lng: parseFloat(data[i]["fields"].lon)};
-                console.log((data[i]["fields"].lat))
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: center
+        });
+
+        {% for profile in userProfile %}
+            var isdogwalker ="{{ profile.isDogwalker }}";
+            if(isdogwalker){
+
+                  var myLatLng = new google.maps.LatLng({{profile.lat}},{{profile.lon}});
             var marker = new google.maps.Marker({
-              position: myLatLng,
-              map: map,
-              title: 'Hello World!'
+                    position: myLatLng,
+                    map: map,
+                    title: '{{ profile.name }}'
+                });
+            google.maps.event.addListener(marker, 'click', function() {
+
+
+                document.location.href = "{% url 'accounts:post_user_book' profile.id %}";
+
             });
             }
 
-
-          }
-        </script>
-        <script async defer
+        {% endfor %}
+    }
+</script>
+<script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4Oa0X7VF-Zg8Dst_TBo62iQtsmoWdsXo&callback=initMap">
-        </script>
-      </body>
-    </html>
+</script>
+</body>
+</html>

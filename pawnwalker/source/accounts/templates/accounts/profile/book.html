@@ -1,0 +1,39 @@
+{% include 'layouts/default/page.html' %}
+<!doctype html>
+<html lang="en">
+<h1>Book your dog walker Now </h1>
+  <body>
+    <label title="start date time"> start date and time</label>
+    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+      <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+
+     <label title="start date time"> end date and time</label>
+    <div    class="input-group date" id="datetimepicker2" data-target-input="nearest">
+      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2"/>
+      <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+<span style='color:red;margin-top:2.25em; display:block;'>&nbsp;</span>
+<div>
+  <h1> Dog walker name :{{ myvar.name }} </h1>
+</div>
+
+    <span style='color:red;margin-top:2.25em; display:block;'>&nbsp;</span>
+<button type="button" class="btn btn-primary">
+  Book <span class="badge badge-danger ml-2"></span>
+  <span class="sr-only">Book</span>
+</button>
+
+    <script>
+      $(function () {
+        $("#datetimepicker1").datetimepicker();
+      });
+    </script>
+
+  </body>
+</html>

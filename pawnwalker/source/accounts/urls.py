@@ -1,6 +1,7 @@
+
 from django.urls import path, re_path
 
-from userprofile.views import indexUserProfile, indexMapProfile
+from userprofile.views import indexUserProfile, indexMapProfile, indexDogWalkerBook
 from .views import (
     LogInView, ResendActivationCodeView, RemindUsernameView, SignUpView, ActivateView, LogOutView,
     ChangeEmailView, ChangeEmailActivateView, ChangeProfileView, ChangePasswordView,
@@ -14,9 +15,8 @@ urlpatterns = [
     path('log-out/', LogOutView.as_view(), name='log_out'),
     path('update/profile/', indexUserProfile.as_view(), name='post_user_view'),
     path('dogwalker/area', indexMapProfile, name='post_user_map'),
-
+    path(r'dogwalker/book/(?P<slug>[\w-]+)/$',indexDogWalkerBook,name='post_user_book' ),
     path('resend/activation-code/', ResendActivationCodeView.as_view(), name='resend_activation_code'),
-
     path('sign-up/', SignUpView.as_view(), name='sign_up'),
     path('activate/<code>/', ActivateView.as_view(), name='activate'),
 

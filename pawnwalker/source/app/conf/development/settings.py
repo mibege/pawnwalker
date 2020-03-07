@@ -24,10 +24,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'userprofile',
-
+    'bootstrap_datepicker_plus',
     # Vendor apps
     'bootstrap4',
-
     # Application apps
     'main',
     'accounts',
@@ -70,7 +69,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(CONTENT_DIR, 'tmp/emails')
 EMAIL_HOST_USER = 'test@example.com'
 DEFAULT_FROM_EMAIL = 'test@example.com'
-
+EMAIL_PORT = "1025"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
