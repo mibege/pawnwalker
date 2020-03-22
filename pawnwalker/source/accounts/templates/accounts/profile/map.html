@@ -6,7 +6,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Pawnwalker Map</title>
+    <title>Simple Markers</title>
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -57,7 +57,7 @@
             google.maps.event.addListener(marker, 'click', function() {
 
 
-                document.location.href = "{% url 'accounts:post_user_book' profile.id %}";
+                document.location.href = "{% url 'accounts:post_booking' profile.id %}";
 
             });
             }

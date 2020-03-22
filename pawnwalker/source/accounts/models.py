@@ -9,6 +9,8 @@ class Activation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     code = models.CharField(max_length=20, unique=True)
     email = models.EmailField(blank=True)
+    address = models.CharField(max_length=20, default='kajaanintie 46')
+    isDogwalker = models.BooleanField(default=True)
 
 
 class Event(models.Model):

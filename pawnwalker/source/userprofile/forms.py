@@ -1,4 +1,5 @@
 from django import forms
+from django.shortcuts import get_object_or_404
 
 from accounts.models import Event
 from userprofile.models import userProfile
@@ -18,6 +19,20 @@ class UserProfileForm(forms.ModelForm):
         if commit:
             auction.save()
         return auction
+
+
+class AdvertForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        self.request = kwargs.pop('request', None)
+        super(AdvertForm, self).__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        instance = super(AdvertForm, self).save(commit=False)
+        instance.user = self.request.user
+
+        if commit:
+            instance.save()
+        return instance
 
 
 class DateForm(forms.Form):

@@ -1,0 +1,16 @@
+{% extends 'layouts/default/base.html' %}
+<!DOCTYPE html>
+{% load bootstrap4 %}
+{% load i18n %}
+
+
+
+<body>
+   {% block title %}{{ object }}{% endblock %}
+
+{% block main %}
+    <h1>{{ object }}</h1>
+{% endblock %}
+</body>
+
+</html>

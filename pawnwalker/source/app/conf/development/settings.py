@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'userprofile',
     'bootstrap_datepicker_plus',
+    'booking',
     # Vendor apps
     'bootstrap4',
     # Application apps

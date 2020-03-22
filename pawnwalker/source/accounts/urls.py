@@ -1,7 +1,7 @@
+from django.conf.urls import url
+from django.urls import path, re_path, include
 
-from django.urls import path, re_path
-
-from userprofile.views import indexUserProfile, indexMapProfile, indexDogWalkerBook
+from userprofile.views import indexUserProfile, indexMapProfile, indexDogWalkerBook, update_advert
 from .views import (
     LogInView, ResendActivationCodeView, RemindUsernameView, SignUpView, ActivateView, LogOutView,
     ChangeEmailView, ChangeEmailActivateView, ChangeProfileView, ChangePasswordView,
@@ -19,7 +19,7 @@ urlpatterns = [
     path('resend/activation-code/', ResendActivationCodeView.as_view(), name='resend_activation_code'),
     path('sign-up/', SignUpView.as_view(), name='sign_up'),
     path('activate/<code>/', ActivateView.as_view(), name='activate'),
-
+    url(r'^booking/', include('booking.urls'), name='post_booking'),
     path('restore/password/', RestorePasswordView.as_view(), name='restore_password'),
     path('restore/password/done/', RestorePasswordDoneView.as_view(), name='restore_password_done'),
     path('restore/<uidb64>/<token>/', RestorePasswordConfirmView.as_view(), name='restore_password_confirm'),
