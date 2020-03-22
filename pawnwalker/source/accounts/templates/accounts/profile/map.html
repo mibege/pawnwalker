@@ -57,7 +57,7 @@
             google.maps.event.addListener(marker, 'click', function() {
 
 
-                document.location.href = "{% url 'accounts:post_booking' profile.id %}";
+                document.location.href = "{% url 'accounts:booking_create' %}";
 
             });
             }
