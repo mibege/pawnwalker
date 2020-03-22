@@ -17,7 +17,8 @@ class BookingForm(forms.ModelForm):
         keep_blank = [
             'phone', 'notes', 'street2', 'title', 'user', 'session',
             'date_from', 'date_until', 'special_request', 'time_period',
-            'time_unit', 'email', 'currency', 'total']
+            'time_unit', 'email', 'currency', 'total','gender', 'title', 'forename', 'surname', 'nationality',
+                  'street1', 'street2', 'city', 'zip_code', 'country', 'phone']
         # set all fields except the keep_blank ones to be required, since they
         # need to be blank=True on the model itself to allow creating Booking
         # instances without data
@@ -36,9 +37,7 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = ('gender', 'title', 'forename', 'surname', 'nationality',
-                  'street1', 'street2', 'city', 'zip_code', 'country', 'phone',
-                  'special_request', 'date_from', 'date_until')
+        fields = ('special_request', 'date_from', 'date_until')
 
 
 class BookingIDAuthenticationForm(AuthenticationForm):
