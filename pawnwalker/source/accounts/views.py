@@ -81,8 +81,8 @@ class LogInView(GuestOnlyView, FormView):
 
         if url_is_safe:
             return redirect(redirect_to)
-
-        return redirect(settings.LOGIN_REDIRECT_URL)
+        messages.success(request, _('You have successfully Loged in. Fill in the detail your account!'))
+        return redirect('accounts:post_user_view')
 
 
 class SignUpView(GuestOnlyView, FormView):
