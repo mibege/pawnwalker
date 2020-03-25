@@ -100,6 +100,7 @@ DISABLE_USERNAME = False
 LOGIN_VIA_EMAIL = False
 LOGIN_VIA_EMAIL_OR_USERNAME = True
 LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT = 'accounts:post_user_view'
 LOGIN_URL = 'accounts:log_in'
 USE_REMEMBER_ME = False
 

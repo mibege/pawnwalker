@@ -14,7 +14,7 @@
     <meta name="description" content="An example of Django project with basic user functionality.">
     <meta name="author" content="Yehor Smoliakov">
 
-    <link rel="icon" href="{% static 'favicon.ico' %}">
+
 
     <title>PawnWalker</title>
 
@@ -100,31 +100,6 @@
 <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 
 <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
-<script>
-
-      function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: myLatLng
-        });
-
-        var marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map,
-          title: 'Hello World!'
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4Oa0X7VF-Zg8Dst_TBo62iQtsmoWdsXo&callback=initMap">
-    </script>
-  <script>
-      $(function () {
-        $("#datetimepicker1").datetimepicker();
-      });
-    </script>
 
 </body>
 </html>
