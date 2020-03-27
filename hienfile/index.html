@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>PawsWalker</title>
+  <!-- Google Fonts Ctrl+/ -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,900|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+   <section id="title">
+     
+     <!-- Image -->
+    <div>
+      <img class="title-image" src="img/img1.jpg" alt="woman-hugging-dog">
+    </div>
+    
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><i class="fas fa-paw"></i> PawsWalker</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Log in <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Create an account</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Change language
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">English</a>
+              <a class="dropdown-item" href="#">Finnish</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Chinese</a>
+            </div>
+          </li>
+        </ul>     
+      </div>
+    </nav>
+
+    <!-- Form -->
+    <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <form>
+              <div class="form-group">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Dog walker near me</span>
+                    <input class="form-control" type="text" placeholder="Enter ZIP/Location">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <span class="form-label">Walk date and time</span>
+                    <input class="form-control" type="date" required>
+                  </div>
+                </div>
+              </div>
+              <span class="form-label">My dog size</span>
+              <div class="row">
+                  <div class="col-md-12">
+                    <button type="button" class="size-btn btn btn-light btn-lg active">Small (0 - 6 kg)</button>
+                    <button type="button" class="size-btn btn btn-light btn-lg ">Medium (7 - 16 kg)</button>
+                    <button type="button" class="size-btn btn btn-light btn-lg ">Large (17 - 25 kg)</button>
+                    <button type="button" class="size-btn btn btn-light btn-lg ">Giant (26+ kg)</button>
+                  </div>
+                <div class="col-md-6">
+                  <div class="form-btn">
+                    <div class="col-md-12">
+                    <button class="submit-btn">Search</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
